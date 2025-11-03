@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>五子棋游戏</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>五子棋游戏</h1>
+
+    <div class="game-info">
+      <div class="status" id="status">黑子先行</div>
+      <button class="restart-btn" id="restartBtn">重新开始</button>
+    </div>
+
+    <div class="board-container">
+      <canvas id="board" width="600" height="600"></canvas>
+    </div>
+
+    <div class="instructions">
+      <h3>游戏规则：</h3>
+      <ul>
+        <li>黑子先行，双方轮流落子</li>
+        <li>横、竖、斜任意方向连成五子即获胜</li>
+        <li>点击棋盘交叉点落子</li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
