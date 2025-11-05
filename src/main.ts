@@ -88,10 +88,17 @@ class GameController {
     // 更新状态文本
     const gameState = this.game.getGameState()
 
-    if (gameState.isGameOver && gameState.winner) {
-      const winnerText = gameState.winner === 'black' ? '黑子' : '白子'
-      this.statusElement.textContent = `${winnerText}获胜！`
-      this.statusElement.style.color = '#e74c3c'
+    if (gameState.isGameOver) {
+      if (gameState.winner) {
+        // 有获胜者
+        const winnerText = gameState.winner === 'black' ? '黑子' : '白子'
+        this.statusElement.textContent = `${winnerText}获胜！`
+        this.statusElement.style.color = '#e74c3c'
+      } else {
+        // 平局
+        this.statusElement.textContent = '平局！'
+        this.statusElement.style.color = '#f39c12'
+      }
     } else {
       const currentText = gameState.currentPlayer === 'black' ? '黑子' : '白子'
       this.statusElement.textContent = `${currentText}回合`

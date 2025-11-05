@@ -110,11 +110,29 @@ export class GomokuGame {
     if (this.checkWin(row, col)) {
       this.winner = this.currentPlayer
       this.isGameOver = true
+    } else if (this.isBoardFull()) {
+      // 棋盘已满，平局
+      this.isGameOver = true
+      // winner 保持为 null 表示平局
     } else {
       // 切换玩家
       this.currentPlayer = this.currentPlayer === 'black' ? 'white' : 'black'
     }
 
+    return true
+  }
+
+  /**
+   * 检查棋盘是否已满（平局）
+   */
+  private isBoardFull(): boolean {
+    for (let row = 0; row < this.boardSize; row++) {
+      for (let col = 0; col < this.boardSize; col++) {
+        if (this.board[row][col] === null) {
+          return false
+        }
+      }
+    }
     return true
   }
 
