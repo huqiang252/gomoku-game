@@ -7,10 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@vitest/ui": "^4.0.7",
